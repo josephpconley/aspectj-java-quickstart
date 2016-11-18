@@ -11,4 +11,9 @@ public class HelloAspect {
     public void before(JoinPoint joinPoint){
         System.out.println("Before Hello!");
     }
+
+    @After("execution(* *(..)) && @annotation(HelloAnnotation)")
+    public void after(JoinPoint joinPoint){
+        System.out.println("After Hello!");
+    }
 }
